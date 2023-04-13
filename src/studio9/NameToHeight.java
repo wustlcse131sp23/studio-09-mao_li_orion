@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import assignment9.Drawable;
 import support.cse131.NotYetImplementedException;
 
 public class NameToHeight {
@@ -19,9 +20,29 @@ public class NameToHeight {
 	 */
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-
-		// FIXME
-		throw new NotYetImplementedException();
+		
+		Map<String, Integer> heights = new HashMap<>();
+		heights.put("Han", 173);
+		heights.put("Harry", 190);
+		heights.put("Orion", 169);
+		
+		boolean quit = false;
+		
+		while (quit == false) {
+			System.out.println("Enter name.");
+			String name = in.nextLine();
+			
+			if (name.equals("quit")) {
+				quit = true;
+				System.out.println("Bye bye.");
+				break;
+			} else if(heights.get(name) == null) {
+				System.out.println("Dunno.");
+			} else {
+				System.out.println(heights.get(name));
+			}
+			
+		}
 
 	}
 }
